@@ -129,6 +129,11 @@ section {
   border-color: #CCCCCC;
 }
 
+.option #color-picker {
+  opacity: 0;
+  cursor: pointer;
+}
+
 .buttons button {
   width: 100%;
   color: #FFFFFF;
@@ -160,4 +165,9 @@ section {
 
 .drawing-board {
   flex: 1;
+}
+
+.drawing-board canvas {
+  width: 100%;
+  height: 100%;
 }
