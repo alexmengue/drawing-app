@@ -7,3 +7,5 @@ const drawing = (event) => {
 };
 
 canvas.addEventListener('mousemove', drawing);
+
+//soon to be
