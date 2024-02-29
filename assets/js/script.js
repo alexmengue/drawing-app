@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
 });
 
 const startDraw = () => {
-  //soon
+  isDrawing = true;
 };
 
 const drawing = (event) => {
@@ -20,3 +20,4 @@ const drawing = (event) => {
 
 canvas.addEventListener('mousedown', startDraw);
 canvas.addEventListener('mousemove', drawing);
+canvas.addEventListener('mouseup', () => isDrawing = false);
