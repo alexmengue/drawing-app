@@ -24,7 +24,8 @@ const drawing = (event) => {
 
 toolBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    //soon
+    document.querySelector('.options .active').classList.remove('active');
+    btn.classList.add('active');
   });
 });
 
