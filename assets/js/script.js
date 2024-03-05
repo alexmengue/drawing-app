@@ -3,6 +3,7 @@ const toolBtns = document.querySelectorAll('.tool');
 ctx = canvas.getContext('2d');
 
 let isDrawing = false;
+let selectedTool = 'brush';
 let brushWidth = 5;
 
 window.addEventListener('load', () => {
@@ -25,6 +26,7 @@ const drawing = (event) => {
 toolBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelector('.options .active').classList.remove('active');
+    selectedTool = btn.id;
     btn.classList.add('active');
   });
 });
