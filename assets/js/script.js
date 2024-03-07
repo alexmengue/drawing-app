@@ -2,7 +2,7 @@ const canvas = document.querySelector('canvas'),
 toolBtns = document.querySelectorAll('.tool'),
 ctx = canvas.getContext('2d');
 
-let prevMouseX, prevMouseY,
+let prevMouseX, prevMouseY, snapshot,
 isDrawing = false,
 selectedTool = 'brush',
 brushWidth = 5;
@@ -22,10 +22,12 @@ const startDraw = (event) => {
   prevMouseY = event.offsetY;
   ctx.beginPath();
   ctx.lineWidth = brushWidth;
+  snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
 };
 
 const drawing = (event) => {
   if (!isDrawing) return;
+  ctx.putImageData(snapshot, 0, 0);
 
   if (selectedTool === 'brush') {
     ctx.lineTo(event.offsetX, event.offsetY);
