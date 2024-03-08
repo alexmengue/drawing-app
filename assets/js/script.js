@@ -1,5 +1,6 @@
 const canvas = document.querySelector('canvas'),
 toolBtns = document.querySelectorAll('.tool'),
+fillColor = document.querySelectorAll('#fill-color'),
 ctx = canvas.getContext('2d');
 
 let prevMouseX, prevMouseY, snapshot,
@@ -13,7 +14,11 @@ window.addEventListener('load', () => {
 });
 
 const drawRect = (event) => {
-  ctx.strokeRect(event.offsetX, event.offsetY, prevMouseX - event.offsetX, prevMouseY - event.offsetY);
+  if (!fillColor.checked) {
+    return ctx.strokeRect(event.offsetX, event.offsetY, prevMouseX - event.offsetX, prevMouseY - event.offsetY);
+  }
+
+  ctx.fillRect(event.offsetX, event.offsetY, prevMouseX - event.offsetX, prevMouseY - event.offsetY);
 }
 
 const startDraw = (event) => {
