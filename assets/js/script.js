@@ -21,6 +21,13 @@ const drawRect = (event) => {
   ctx.fillRect(event.offsetX, event.offsetY, prevMouseX - event.offsetX, prevMouseY - event.offsetY);
 }
 
+const drawCircle = (event) => {
+  ctx.beginPath();
+  let radius = Math.sqrt(Math.pow((prevMouseX - event.offsetX), 2) + Math.pow((prevMouseY - event.offsetY), 2));
+  ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI);
+  ctx.stroke();
+};
+
 const startDraw = (event) => {
   isDrawing = true;
   prevMouseX = event.offsetX;
@@ -39,7 +46,9 @@ const drawing = (event) => {
     ctx.stroke();
   } else if (selectedTool === 'rectangle') {
     drawRect(event);
-  }
+  } else if (selectedTool === 'circle') {
+    drawCircle(event);
+  };
 };
 
 toolBtns.forEach(btn => {
