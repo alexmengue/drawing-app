@@ -28,6 +28,10 @@ const drawCircle = (event) => {
   fillColor.checked ? ctx.fill() : ctx.stroke();
 };
 
+const drawTriangle = (event) => {
+  //soon
+};
+
 const startDraw = (event) => {
   isDrawing = true;
   prevMouseX = event.offsetX;
