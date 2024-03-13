@@ -48,6 +48,8 @@ const drawing = (event) => {
     drawRect(event);
   } else if (selectedTool === 'circle') {
     drawCircle(event);
+  } else {
+    drawTriangle(event);
   };
 };
 
