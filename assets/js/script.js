@@ -29,7 +29,10 @@ const drawCircle = (event) => {
 };
 
 const drawTriangle = (event) => {
-  //soon
+  ctx.beginPath();
+  ctx.moveTo(prevMouseX, prevMouseY);
+  ctx.lineTo(event.offsetX, event.offsetY);
+  ctx.stroke();
 };
 
 const startDraw = (event) => {
