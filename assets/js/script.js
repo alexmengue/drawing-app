@@ -33,6 +33,7 @@ const drawTriangle = (event) => {
   ctx.moveTo(prevMouseX, prevMouseY);
   ctx.lineTo(event.offsetX, event.offsetY);
   ctx.lineTo(prevMouseX * 2 - event.offsetX, event.offsetY);
+  ctx.closePath();
   ctx.stroke();
 };
 
