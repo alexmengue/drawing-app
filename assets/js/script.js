@@ -2,7 +2,7 @@ const canvas = document.querySelector('canvas'),
 toolBtns = document.querySelectorAll('.tool'),
 fillColor = document.querySelector('#fill-color'),
 sizeSlider = document.querySelector('#size-slider'),
-colorBtns = document.querySelector('.colors .option'),
+colorBtns = document.querySelectorAll('.colors .option'),
 ctx = canvas.getContext('2d');
 
 let prevMouseX, prevMouseY, snapshot,
@@ -75,7 +75,10 @@ toolBtns.forEach(btn => {
 sizeSlider.addEventListener('change', () => brushWidth = sizeSlider.value);
 
 colorBtns.forEach(btn => {
-  //soon
+  btn.addEventListener('click', () => {
+    document.querySelector('.options .selected').classList.remove('selected');
+    btn.classList.add('selected');
+  });
 });
 
 canvas.addEventListener('mousedown', startDraw);
