@@ -8,7 +8,8 @@ ctx = canvas.getContext('2d');
 let prevMouseX, prevMouseY, snapshot,
 isDrawing = false,
 selectedTool = 'brush',
-brushWidth = 5;
+brushWidth = 5,
+selectedColor = '#000000';
 
 window.addEventListener('load', () => {
   canvas.width = canvas.offsetWidth;
@@ -45,6 +46,8 @@ const startDraw = (event) => {
   prevMouseY = event.offsetY;
   ctx.beginPath();
   ctx.lineWidth = brushWidth;
+  ctx.strokeStyle = selectedColor;
+  ctx.fillStyle = selectedColor;
   snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
 };
 
@@ -78,6 +81,7 @@ colorBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelector('.options .selected').classList.remove('selected');
     btn.classList.add('selected');
+    selectedColor = window.getComputedStyle(btn).getPropertyValue('background-color');
   });
 });
 
