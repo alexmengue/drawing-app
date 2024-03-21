@@ -3,6 +3,7 @@ toolBtns = document.querySelectorAll('.tool'),
 fillColor = document.querySelector('#fill-color'),
 sizeSlider = document.querySelector('#size-slider'),
 colorBtns = document.querySelectorAll('.colors .option'),
+colorPicker = document.querySelector('#color-picker'),
 ctx = canvas.getContext('2d');
 
 let prevMouseX, prevMouseY, snapshot,
@@ -83,6 +84,10 @@ colorBtns.forEach(btn => {
     btn.classList.add('selected');
     selectedColor = window.getComputedStyle(btn).getPropertyValue('background-color');
   });
+});
+
+colorPicker.addEventListener('change', () => {
+  //soon
 });
 
 canvas.addEventListener('mousedown', startDraw);
