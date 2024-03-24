@@ -4,6 +4,7 @@ fillColor = document.querySelector('#fill-color'),
 sizeSlider = document.querySelector('#size-slider'),
 colorBtns = document.querySelectorAll('.colors .option'),
 colorPicker = document.querySelector('#color-picker'),
+clearCanvas = document.querySelector('.clear-canvas'),
 ctx = canvas.getContext('2d');
 
 let prevMouseX, prevMouseY, snapshot,
@@ -90,6 +91,10 @@ colorBtns.forEach(btn => {
 colorPicker.addEventListener('change', () => {
   colorPicker.parentElement.style.background = colorPicker.value;
   colorPicker.parentElement.click();
+});
+
+clearCanvas.addEventListener('click', () => {
+  //soon
 });
 
 canvas.addEventListener('mousedown', startDraw);
