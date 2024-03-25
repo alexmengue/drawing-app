@@ -94,7 +94,7 @@ colorPicker.addEventListener('change', () => {
 });
 
 clearCanvas.addEventListener('click', () => {
-  //soon
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
 canvas.addEventListener('mousedown', startDraw);
