@@ -99,7 +99,10 @@ clearCanvas.addEventListener('click', () => {
 });
 
 saveImg.addEventListener('click', () => {
-  //soon
+  const link = document.createElement('a');
+  link.download = `${Date.now()}.jpg`;
+  link.href = canvas.toDataURL();
+  link.click();
 });
 
 canvas.addEventListener('mousedown', startDraw);
