@@ -14,6 +14,10 @@ selectedTool = 'brush',
 brushWidth = 5,
 selectedColor = '#000000';
 
+const setCanvasBackground = () => {
+  //soon
+};
+
 window.addEventListener('load', () => {
   canvas.width = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
